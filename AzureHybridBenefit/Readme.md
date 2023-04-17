@@ -1,0 +1,1 @@
+These are for enforcing different Azure Policies with regards to Azure Hybrid Benefit. This includes simple audit policies in addition to remediation polices that will enable AHB on the specific OS images (imageOffers).
