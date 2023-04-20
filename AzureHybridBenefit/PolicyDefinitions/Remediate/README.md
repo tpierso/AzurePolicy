@@ -4,7 +4,7 @@ Default parameter values are set to target Windows Server Operating Systems.
 
 When Assigning the policy, ensure to set the parameter values to match their appropriate target. You cannot mix imagePublisher, imageOffers, and licenseTypes between Windows Client OSs and Windows Server OSs.
 
-For example:
+Appropriate values for each:
   **For Windows Server Operating Systems:**
 	![image](https://user-images.githubusercontent.com/128192321/233497956-67af5b23-0391-4493-8c1f-23656deb461a.png)
 
