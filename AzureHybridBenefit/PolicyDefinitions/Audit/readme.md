@@ -7,8 +7,8 @@ When Assigning the policy, ensure to set the parameter values to match their app
 Appropriate values for each:
 
   **For Windows Server Operating Systems:**
-	![image](https://user-images.githubusercontent.com/128192321/233497956-67af5b23-0391-4493-8c1f-23656deb461a.png)
+	![image](https://user-images.githubusercontent.com/128192321/234336161-a15c54f4-5835-4db4-acfc-465bb8b8b0fb.png)
 
   **For Windows Client Operating Systems:**
-    ![image](https://user-images.githubusercontent.com/128192321/233497904-e32ebeca-3aa9-43d9-af51-12257ff1593e.png)
-    ![image](https://user-images.githubusercontent.com/128192321/233497843-c39be031-ffd0-43e0-b8da-e0e701f7f454.png)
+	![image](https://user-images.githubusercontent.com/128192321/234336259-ff58b985-d295-4010-9107-2cba79b08f6b.png)
+	![image](https://user-images.githubusercontent.com/128192321/234336324-b6ba8770-6f9f-4b30-a80f-da1fd3ba771a.png)
