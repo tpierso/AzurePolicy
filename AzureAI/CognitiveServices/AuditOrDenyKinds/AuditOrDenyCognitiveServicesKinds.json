@@ -6,14 +6,14 @@
     "policyRule": {
     "if": {
         "allOf": [
-        {
-            "field": "type",
-            "equals": "[parameters('type')]"
-        },
-        {
-            "field": "kind",
-            "equals": "[parameters('kind')]"
-        }
+            {
+                "field": "type",
+                "equals": "[parameters('type')]"
+            },
+            {
+                "field": "kind",
+                "equals": "[parameters('kind')]"
+            }
         ]
     },
     "then": {
@@ -24,8 +24,8 @@
     "effect": {
         "type": "String",
         "metadata": {
-        "displayName": "Effect",
-        "description": "Enable or disable the execution of the policy"
+            "displayName": "Effect",
+            "description": "Enable or disable the execution of the policy"
         },
         "allowedValues": [
             "Audit",
