@@ -1,0 +1,81 @@
+{
+    "mode": "All",
+    "policyRule": {
+        "if": {
+            "allOf": [
+                {
+                    "field": "type",
+                    "equals": "Microsoft.Compute/virtualMachines"
+                },
+                {
+                    "field": "Microsoft.Compute/virtualMachines/instanceView.osName",
+                    "equals": "[parameters('osName')]"
+                },
+                {
+                    "field": "Microsoft.Compute/virtualMachines/licenseType",
+                    "notEquals": "[parameters('licenseType')]"
+                }
+            ]
+        },
+            "then": {
+            "effect": "[parameters('effect')]"
+        }
+    },
+    "parameters": {
+      "effect": {
+        "type": "String",
+        "metadata": {
+          "displayName": "Effect",
+          "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+          "Audit",
+          "Deny",
+          "Disabled"
+        ],
+        "defaultValue": "Audit"
+      },
+      "osName": {
+        "type": "Array",
+        "metadata": {
+          "displayName": "OS Name",
+          "description": "OS version eligible for Azure Hybrid Benefit."
+        },
+        "allowedValues": [
+          [
+            "Windows Server 2019 Datacenter",
+            "Windows Server 2016 Datacenter",
+            "Windows Server 2022 Datacenter"
+          ],
+          [
+            "Windows 10 Pro",
+            "Windows 10 Enterprise LTSC 2019",
+            "Windows 10 Enterprise",
+            "Windows 10 Enterprise multi-session",
+            "Windows 11 Pro",
+            "Windows 11 Enterprise",
+            "Windows 11 Enterprise multi-session"
+          ]
+        ],
+        "defaultValue": [
+          [
+            "Windows Server 2019 Datacenter",
+            "Windows Server 2016 Datacenter",
+            "Windows Server 2022 Datacenter"
+          ]
+        ]
+      },    
+      "licenseType": {
+        "type": "String",
+        "metadata": {
+          "displayName": "License Type",
+          "description": "The Windows license used based on the image publisher and offer."
+        },
+        "allowedValues": [
+          "Windows_Server",
+          "Windows_Client"
+        ],
+        "defaultValue": "Windows_Server"
+      }
+    }
+  }
