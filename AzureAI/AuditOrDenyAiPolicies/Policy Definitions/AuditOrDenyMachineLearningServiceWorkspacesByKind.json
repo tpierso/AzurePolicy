@@ -1,0 +1,59 @@
+{
+    "displayName": "Audit or deny Machine Learning Services Workspaces by kind.",
+    "policyType": "Custom",
+    "mode": "All",
+    "description": "Identifies Machine Learning Services workspaces by kind.",
+    "policyRule": {
+    "if": {
+        "allOf": [
+            {
+                "field": "type",
+                "equals": "[parameters('type')]"
+            },
+            {
+                "field": "kind",
+                "equals": "[parameters('kind')]"
+            }
+        ]
+    },
+    "then": {
+        "effect": "[parameters('effect')]"
+    }
+    },
+    "parameters": { 
+    "effect": {
+        "type": "String",
+        "metadata": {
+            "displayName": "Effect",
+            "description": "Enable or disable the execution of the policy"
+        },
+        "allowedValues": [
+            "Audit",
+            "Deny",
+            "Disabled"
+        ],
+        "defaultValue": "Audit"
+    },
+        "type": {
+            "type": "String",
+            "metadata": {
+                "displayName": "Type",
+                "description": "The resource type to be targeted."
+            },
+            "allowedValues":[
+                "Microsoft.MachineLearningServices/workspaces"
+            ]
+        },
+        "kind": {
+            "type": "String",
+            "metadata": {
+                "displayName": "Kind",
+                "description": "The resource Kind to be targeted. Project is for AI Projects. Hub is for AI Studio."
+            },
+            "allowedValues":[
+                "Hub",
+                "Project"
+            ]
+        }
+    }
+}
