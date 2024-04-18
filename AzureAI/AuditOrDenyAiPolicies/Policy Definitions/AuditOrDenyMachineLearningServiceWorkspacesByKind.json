@@ -42,7 +42,8 @@
             },
             "allowedValues":[
                 "Microsoft.MachineLearningServices/workspaces"
-            ]
+            ],
+            "defaultValue": "Microsoft.MachineLearningServices/workspaces"
         },
         "kind": {
             "type": "String",
