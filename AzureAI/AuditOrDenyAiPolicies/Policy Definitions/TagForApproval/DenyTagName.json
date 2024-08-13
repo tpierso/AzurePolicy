@@ -1,0 +1,45 @@
+{
+    "displayName": "Deny AIApproved Tag Deployment",
+    "policyType": "Custom",     
+    "mode": "All",
+    "description": "Denies tag assignment ",
+    "policyRule": {
+        "if": {
+            "allOf": [
+                {   
+                    "field": "[concat('tags[', parameters('tagName'), ']')]",
+                    "Exists": "true"
+                }
+            ]
+        },
+        "then": {
+            "effect": "[parameters('effect')]"
+        },
+        "parameters": { 
+            "effect": {
+                "type": "String",
+                "metadata": {
+                    "displayName": "Effect",
+                    "description": "Enable or disable the execution of the policy"
+                },
+                "allowedValues": [
+                    "Audit",
+                    "Deny",
+                    "Disabled"
+                ],
+                "defaultValue": "Deny"
+            },
+            "tagName": {
+                "type": "String",
+                "metadata": {
+                    "displayName": "Tag Name",
+                    "description": "Name of the tag, such as 'AI'"
+                },
+                "allowedValues" : [
+                    "AIApproved"
+                ],
+                "defaultValue": "AIApproved"
+            }
+        }
+    }
+}
